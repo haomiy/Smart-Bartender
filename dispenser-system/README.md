@@ -1,5 +1,5 @@
 # Dispenser-System
-> Dispense beverage type and amount based on external command
+Dispense beverage type and amount based on external command
 
 ## Table of Contents
 - [System Overview](#system-overview)
@@ -32,7 +32,7 @@ NAK          | 0x00          | Not acknowledged. Previous command failed.
 
 ### Send to the system
 All commands sent to the system must be 5 bytes, and in   
-the format of \<Start> \<Slot> \<Volume High Byte> \<Volume Low Byte> \<End>   
+the format of **\<Start> \<Slot> \<Volume High Byte> \<Volume Low Byte> \<End>**   
 
 Otherwise, it will be ignored.   
 
@@ -46,7 +46,7 @@ The formula is given by: **\<Volume High Byte> << 8 | \<Volume Low Byte>**
 
 ### Received from the system
 All commands sent to the system must be 6 bytes, and in   
-the format of \<Start> \<Response> \<Slot> \<Volume High Byte> \<Volume Low Byte> \<End>   
+the format of **\<Start> \<Response> \<Slot> \<Volume High Byte> \<Volume Low Byte> \<End>**   
 
 Otherwise, it will be ignored.   
 
