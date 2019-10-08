@@ -20,8 +20,10 @@ All commands received from this system will be 6 bytes, as will be explained lat
 > TODO - Not yet complete
 
 ## Commands
-The following \<Byte>s will be referenced later in this section   
+The following \<Byte>s will be referenced later in this section  
+
 \<Byte> Name | \<Byte> Value | \<Byte>Description
+-------------|---------------|-------------------
 Start        | 0x55          | The start byte of any message sent or received
 End          | 0xAA          | The end byte of any message sent or received
 Slot         | [Variable]    | Selection of a specific drink
