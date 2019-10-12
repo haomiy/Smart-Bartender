@@ -47,12 +47,10 @@ The formula is given by: **\<Volume High Byte> << 8 | \<Volume Low Byte>**
 \<End> must be 0xAA, although this can be changed if needed.   
 
 ### Received from the system
-All commands sent to the system must be 6 bytes, and in   
+All commands received from the system must be 6 bytes, and in   
 the format of **\<Start> \<Response> \<Slot> \<Volume High Byte> \<Volume Low Byte> \<End>**   
 
-Otherwise, it will be ignored.   
-
-\<Start> must be 0x55, although this can be changed if needed.   
+\<Start> will be 0x55, although this can be changed if needed.   
 \<Response> will either be ACK or NAK, to indicate success or failure.   
 \<Slot>, \<Volume High Byte>, and \<Volume Low Byte> will be the same ones sent to the system, for verification purposes.   
-\<End> must be 0xAA, although this can be changed if needed.   
+\<End> will be 0xAA, although this can be changed if needed.   
