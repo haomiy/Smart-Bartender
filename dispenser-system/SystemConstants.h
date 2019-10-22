@@ -7,7 +7,7 @@
 static const unsigned int DISPENSER_BAUD_RATE = 9600;
 
 /* Ports for motors controlling valves */
-static const int VALVES[] = {D2, D3, D4};
+static const int VALVES[] = {D2, D3};
 
 /* Size of incoming packet */
 static const unsigned int PACKET_SIZE = 5;

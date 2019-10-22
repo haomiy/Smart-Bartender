@@ -16,7 +16,6 @@ void setup() {
   Serial.begin(DISPENSER_BAUD_RATE);
   pinMode(VALVE_1, OUTPUT);
   pinMode(VALVE_2, OUTPUT);
-  pinMode(VALVE_3, OUTPUT);
 }
 
 void loop() {
@@ -28,7 +27,7 @@ void loop() {
       while(Serial.available() > 0) Serial.read(); /* Consume all */
       receivedSlot = 0xFF;
       receivedVolumeHighByte = 0xFF;
-      receivedVolumeLowByte = 0xFF;
+      receivedVolumeLowByte  = 0xFF;
       sendExternalNAK();
     }
     else {
