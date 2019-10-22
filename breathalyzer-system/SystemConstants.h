@@ -1,18 +1,23 @@
 
 /**
- * Constants for the breathalyzer
+ * Constants for the breathalyzer system
  */
 
 /* UART baud rates */
 static const unsigned int BREATHALYZER_BAUD_RATE = 9600;
 
-/* Size of incoming packet */
-static const unsigned int PACKET_SIZE = 4;
+/* Pin assignments */
+static const int BREATHALYZER_ENABLE_PIN = 2;
+static const int BREATHALYZER_DATA_PIN = A0;
 
 /* Predefined packet bytes */
-static const byte START_BYTE = 0x55;
-static const byte   END_BYTE = 0xAA;
+static const byte SYSTEM_ENABLE_BYTE = 0xAA;
 
-/* Predefined responses */
-static const byte NAK = 0x00;
-static const byte ACK = 0x01;
+/* Hardware constants */
+static const unsigned int MAX_ANALOG_VALUE = 1023;
+static const unsigned int MAX_BREATHALYZER_VALUE = 500;
+
+/* Measurement thresholds */
+static const unsigned int MEASUREMENT_SECONDS = 10;
+static const unsigned int MEASUREMENT_COUNT = MEASUREMENT_SECONDS * 10;
+static unsigned int measurements[MEASUREMENT_COUNT];
