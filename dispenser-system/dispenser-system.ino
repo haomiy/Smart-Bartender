@@ -14,8 +14,10 @@ static byte receivedVolumeLowByte;
 
 void setup() {
   Serial.begin(DISPENSER_BAUD_RATE);
-  pinMode(VALVE_1, OUTPUT);
-  pinMode(VALVE_2, OUTPUT);
+  pinMode(VALVES[0], OUTPUT);
+  pinMode(VALVES[1], OUTPUT);
+  digitalWrite(VALVES[0], HIGH);
+  digitalWrite(VALVES[1], HIGH);
 }
 
 void loop() {
@@ -31,17 +33,15 @@ void loop() {
       sendExternalNAK();
     }
     else {
-      Serial.read(); // Throw away START_BYTE
       receivedSlot = Serial.read();
       receivedVolumeHighByte = Serial.read();
       receivedVolumeLowByte  = Serial.read();
-      Serial.read(); // Throw away END_BYTE
       sendExternalACK();
       /* Everything is OK. Start pouring */
       unsigned long volume = receivedVolumeHighByte << 8 | receivedVolumeLowByte;
-      digitalWrite(VALVES[receivedSlot], HIGH);
-      delay(MILLISECONDS_PER_MILLILITTER * volume);
       digitalWrite(VALVES[receivedSlot], LOW);
+      delay(MILLISECONDS_PER_MILLILITTER * volume);
+      digitalWrite(VALVES[receivedSlot], HIGH);
     }
   }
 }
