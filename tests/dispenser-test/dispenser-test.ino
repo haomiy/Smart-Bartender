@@ -5,7 +5,6 @@
 
 /* System Constants */
 static const byte ACK = 0x01;
-static const unsigned int WAIT_TIME = 50;
 static const byte VALVE_0 = 0x00;
 static const byte VALVE_1 = 0x01;
 
