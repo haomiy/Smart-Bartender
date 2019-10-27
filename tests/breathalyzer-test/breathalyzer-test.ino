@@ -5,8 +5,8 @@
 
 /* System Constants */
 static const byte BREATHALYZER_SYSTEM_ENABLE = 0xAA;
-static const unsigned int EXPECTED_BYTES;
-static const unsigned int WAIT_TIME = 2050;
+static const unsigned int EXPECTED_BYTES = 2;
+static const unsigned int WAIT_TIME = 10050;
 
 void setup() {
   Serial.begin(9600);
