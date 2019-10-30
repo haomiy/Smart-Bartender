@@ -21,7 +21,7 @@ void setup() {
   }
   else {
     Serial.print("Time took: "); Serial.println(millis() - startTime);
-    int returnedMeasurement = Serial.read() << 8 | Serial.read();
+    unsigned int returnedMeasurement = (Serial.read() << 8) | Serial.read();
     Serial.print("Returned Measurement: "); Serial.println(returnedMeasurement);
   }
   while(true) {}
