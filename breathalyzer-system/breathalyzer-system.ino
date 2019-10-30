@@ -21,7 +21,7 @@ void loop() {
       delay(100);
     }
     sortArrayReverse(measurements, MEASUREMENT_COUNT);
-    unsigned int result = (measurements[0] + measurements[1]) / 2;
+    unsigned int result = ceil((measurements[0] + measurements[1]) / 2.0);
     sentToExternal(result);
   }
 }
