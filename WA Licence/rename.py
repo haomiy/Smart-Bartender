@@ -8,7 +8,7 @@ cnt = 0
 for file in files:
     print(cnt)
     
-    if file.endswith(".jpg") or file.endswith(".png"):
+    if file.endswith(".jpg") or file.endswith(".png") or file.endswith(".jpeg"):
         # read img
         file_new = "License" + str(cnt) + ".jpg"
         os.rename(file, file_new)
