@@ -21,8 +21,16 @@ void setup() {
   tft.begin(TFT_RATE, COLOR_BLACK);
   tft.setRotation(HORIZONTAL_1);
   tft.setTextColor(COLOR_WHITE);
+  pinMode(27, INPUT_PULLUP);
+  Serial.begin(9600);
+  loadIDScanPromptScreen();
+  
 }
 
 void loop() {
-  
+  if (digitalRead(27) == LOW) {
+     tft.fillScreen(COLOR_BLACK);
+     // loadInformationScreen();
+     loadBreathalyzerPromptScreen();
+  }
 }
