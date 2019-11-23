@@ -19,5 +19,14 @@ void setup() {
 }
 
 void loop() {
-  
+  if(Serial.available() > 0) {
+    delay(5);
+    if(Serial.available() == 1) consumeAllBytes();
+    else {
+      byte targetSystem = Serial.read();
+      transmitToSystem(targetSystem);
+    }
+  }
 }
+
+void consumeAllBytes() {while(Serial.available() > 0) Serial.read();}
