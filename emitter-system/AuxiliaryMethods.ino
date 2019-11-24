@@ -2,7 +2,10 @@
 void transmitToSystem(byte targetSystem) {
   switch (targetSystem) {
     case SYSTEM_ID_READER:
-      // Need to ask about system first
+      if(Serial.read() == 0xAA) {
+        while(IDReader.available() == 0) {}
+        sendToController(IDReader.read());
+      } else {consumeAllBytes();}
       break;
     case SYSTEM_BREATHALYZER:
       if(Serial.read() == 0xAA) {
@@ -25,6 +28,10 @@ void transmitToSystem(byte targetSystem) {
       consumeAllBytes();
       break;
   }
+}
+
+void sendToController(byte byte1) {
+  Serial.write(byte1);
 }
 
 void sendToController(byte byte1, byte byte2) {
