@@ -17,3 +17,6 @@ const int rxIDReaderPin = 0;
 const int txIDReaderPin = 0;
 
 /* Identifiers */
+const byte SYSTEM_ID_READER    = 0X01;
+const byte SYSTEM_BREATHALYZER = 0x02;
+const byte SYSTEM_DISPENSER    = 0X03;
