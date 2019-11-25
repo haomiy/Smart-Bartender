@@ -15,6 +15,3 @@ static const unsigned int PACKET_SIZE = 3;
 /* Predefined responses */
 static const byte NAK = 0x00;
 static const byte ACK = 0x01;
-
-/* milliseconds for one milliliters to flow */
-static const unsigned int MILLISECONDS_PER_MILLILITTER = 1;
