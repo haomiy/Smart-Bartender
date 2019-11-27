@@ -23,10 +23,10 @@ void loadIDScanPromptScreen() {
   tft.println("  your ID card\n");
   tft.println("* Hold your ID card in");
   tft.println("  front of the camera\n");
-  tft.println("* Then, press the button");
+  /*tft.println("* Then, press the button");
   tft.println("--------------------------\n");
   tft.println("* Press the button to");
-  tft.println("  continue -->");
+  tft.println("  continue -->");*/
 }
 
 /**

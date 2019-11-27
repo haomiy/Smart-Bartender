@@ -15,7 +15,7 @@ Sipeed_OV2640 camera(FRAMESIZE_QVGA, PIXFORMAT_RGB565);
 
 void setup() {
   Serial1.begin(DISPENSER_BAUD_RATE);
-  Serial2.begin(BREATHALYZER_BAUD_RATE);
+  // Serial2.begin(BREATHALYZER_BAUD_RATE); - emitter already communicates with the breathalyzer
   camera.begin();
   camera.run(true);
   tft.begin(TFT_RATE, COLOR_BLACK);
