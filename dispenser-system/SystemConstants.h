@@ -13,5 +13,5 @@ static const int VALVES[] = {2, 3};
 static const unsigned int PACKET_SIZE = 3;
 
 /* Predefined responses */
-static const byte NAK = 0x00;
-static const byte ACK = 0x01;
+//static const byte NAK = 0x00;
+//static const byte ACK = 0x01;

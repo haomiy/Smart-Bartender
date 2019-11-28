@@ -13,7 +13,7 @@ void transmitToSystem(byte targetSystem) {
         delay(10500);
         byte intHigh = Breathalyzer.read();
         byte intLow  = Breathalyzer.read();
-        if(intHigh == 0x00) intHigh = 0xFF;
+        if (intHigh == 0x00) intHigh = 0xFF;
         sendToController(intHigh, intLow);
       } else {consumeAllBytes();}
       break;
@@ -21,7 +21,8 @@ void transmitToSystem(byte targetSystem) {
       byte valve   = Serial.read();
       byte intHigh = Serial.read();
       byte intLow  = Serial.read();
-      if(intHigh == 0xFF) intHigh = 0x00;
+      if (intHigh == 0xFF) intHigh = 0x00;
+      if (valve == 0xFF) valve = 0x00;
       sendToDispenser(valve, intHigh, intLow);
       break;
     default:
@@ -41,5 +42,5 @@ void sendToController(byte byte1, byte byte2) {
 
 void sendToDispenser(byte byte1, byte byte2, byte byte3) {
   byte toSend[] = {byte1, byte2, byte3};
-  Serial.write(toSend, sizeof(toSend));
+  Dispenser.write(toSend, sizeof(toSend));
 }

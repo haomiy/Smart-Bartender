@@ -3,13 +3,12 @@
  * System responsible for transmitting and receiving data
  * (Part of the main computer)
  */
-
-#include "NeoSWSerial.h"
 #include "SystemConstants.h"
+#include <SoftwareSerial.h>
 
-NeoSWSerial Dispenser(rxDispenserPin, txDispenserPin);
-NeoSWSerial Breathalyzer(rxBreathalyzerPin, txBreathalyzerPin);
-NeoSWSerial IDReader(rxIDReaderPin, txIDReaderPin);
+SoftwareSerial Dispenser(rxDispenserPin, txDispenserPin);
+SoftwareSerial Breathalyzer(rxBreathalyzerPin, txBreathalyzerPin);
+SoftwareSerial IDReader(rxIDReaderPin, txIDReaderPin);
 
 void setup() {
   Serial.begin(9600);
@@ -20,7 +19,7 @@ void setup() {
 
 void loop() {
   if(Serial.available() > 0) {
-    delay(5);
+    delay(50);
     if(Serial.available() == 1) consumeAllBytes();
     else {
       byte targetSystem = Serial.read();
