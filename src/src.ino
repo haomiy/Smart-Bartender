@@ -1,4 +1,3 @@
-
 #include <Sipeed_ST7789.h>
 #include "SystemConstants.h"
 
@@ -40,15 +39,16 @@ void loop() {
       high_byte = 0x00; 
    }
    tft.setCursor(0, 100);
-   tft.println(high_byte);
-   tft.println(low_byte);
-   //unsigned int returnedMeasurement = (high_byte << 8) | low_byte; // PPM 0~500(but in normal air it's 20~40)
+   // tft.println(high_byte);
+   // tft.println(low_byte);
+   unsigned int returnedMeasurement = (high_byte << 8) | low_byte; // PPM 0~500(but in normal air it's 20~40)
    // tft.fillScreen(COLOR_BLACK);
-   // displayBACLevel(returnedMeasurement);
-   while (true) {}
-
+   displayBACLevel(returnedMeasurement);
+   // while (true) {}
+   
+   delay(50);
    // TO DO: calculate the amount of liquid to pour (in mL), based on the BAC level (mg/mL) 
-   /*unsigned int amountToPour = 200;
+   unsigned int amountToPour = 200;
    byte intHigh = (amountToPour >> 8) & 0xFF;
    intHigh = (intHigh == 0)? 0xFF: intHigh;
    byte intLow = amountToPour & 0xFF;
@@ -58,7 +58,7 @@ void loop() {
    delay(3000);
    byte dispenserValues2[] = {0x03, 0x01, intHigh, intLow};
    Serial.write(dispenserValues2, sizeof(dispenserValues2));
-   while (true) {}*/
+   while (true) {}
    
    // garbage code (above and below)
    /* byte valve   = Serial.read();

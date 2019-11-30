@@ -1,12 +1,14 @@
 
 void transmitToSystem(byte targetSystem) {
   switch (targetSystem) {
-    case SYSTEM_ID_READER:
+    /*case SYSTEM_ID_READER:
       if(Serial.read() == 0xAA) {
         while(IDReader.available() == 0) {}
         sendToController(IDReader.read());
+        IDReader.close();
+        Breathalyzer.begin(9600);
       } else {consumeAllBytes();}
-      break;
+      break; */
     case SYSTEM_BREATHALYZER:
       if(Serial.read() == 0xAA) {
         Breathalyzer.write(0xAA);
@@ -15,6 +17,8 @@ void transmitToSystem(byte targetSystem) {
         byte intLow  = Breathalyzer.read();
         if (intHigh == 0x00) intHigh = 0xFF;
         sendToController(intHigh, intLow);
+        Breathalyzer.end();
+        Dispenser.begin(9600);
       } else {consumeAllBytes();}
       break;
     case SYSTEM_DISPENSER:
