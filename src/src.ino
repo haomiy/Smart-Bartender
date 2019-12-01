@@ -18,16 +18,16 @@ void setup() {
 
 // each iteration is one user
 void loop() {
-   // loadIDScanPromptScreen();
-   // tft.fillScreen(COLOR_BLACK);
-   // displayBACLevel(200);
+   loadIDScanPromptScreen();
    
    // send an enable signal to the ID scanner
-   /*byte enableScanner[] = {SYSTEM_ID_READER, 0xAA};
+   byte enableScanner[] = {SYSTEM_ID_READER, 0xAA};
    Serial.write(enableScanner, sizeof(enableScanner));
    while (Serial.available() == 0) {} // May get stuck when ID is not detected
-   Serial.read(); // consume byte */
-   
+   Serial.read(); // consume byte
+
+   delay(50);
+   tft.fillScreen(COLOR_BLACK);
    loadBreathalyzerPromptScreen();
    byte enableBreathalyzer[] = {SYSTEM_BREATHALYZER, 0xAA};
    Serial.write(enableBreathalyzer, sizeof(enableBreathalyzer));
@@ -42,7 +42,7 @@ void loop() {
    // tft.println(high_byte);
    // tft.println(low_byte);
    unsigned int returnedMeasurement = (high_byte << 8) | low_byte; // PPM 0~500(but in normal air it's 20~40)
-   // tft.fillScreen(COLOR_BLACK);
+   tft.fillScreen(COLOR_BLACK);
    displayBACLevel(returnedMeasurement);
    // while (true) {}
    
@@ -58,7 +58,8 @@ void loop() {
    delay(3000);
    byte dispenserValues2[] = {0x03, 0x01, intHigh, intLow};
    Serial.write(dispenserValues2, sizeof(dispenserValues2));
-   while (true) {}
+   tft.fillScreen(COLOR_BLACK);
+   // while (true) {}
    
    // garbage code (above and below)
    /* byte valve   = Serial.read();

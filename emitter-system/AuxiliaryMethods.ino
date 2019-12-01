@@ -6,7 +6,7 @@ void transmitToSystem(byte targetSystem) {
       if(Serial.read() == 0xAA) {
         while(IDReader.available() == 0) {}
         sendToController(IDReader.read());
-        Breathalyzer.begin(9600);
+        // Breathalyzer.begin(9600);
       } else {consumeAllBytes();}
       IDReader.end();
       break; 
