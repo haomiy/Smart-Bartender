@@ -66,9 +66,17 @@ void loadInformationScreen() {
                         else tft.println(BAC);
 }
 
+void printBAC() {
+  tft.setCursor(0, 35);
+  tft.print("* BAC: "); if(BAC == -1) tft.println("[Unknown]");
+                        else tft.println(BAC);
+}
+
 /**
  * Loads a prompt to breathe into the breathalyzer
  */
 void loadBreathalyzerPromptScreen() {
   // TODO - Undecided
+  tft.setCursor(70, 0);
+  tft.println("Please breathe into the breathalyzer...");
 }

@@ -40,8 +40,13 @@ void loop() {
       /* Everything is OK. Start pouring */
       unsigned long volume = receivedVolumeHighByte << 8 | receivedVolumeLowByte;
       digitalWrite(VALVES[receivedSlot], LOW);
-      delay(MILLISECONDS_PER_MILLILITTER * volume);
+      delay(millilitersToMilliseconds(volume));
       digitalWrite(VALVES[receivedSlot], HIGH);
     }
   }
+}
+
+/* Converts milliliters to pour to milliseconds the motor needs to maintain ON */
+int millilitersToMilliseconds(int milliliters) {
+  return ceil(40.7*milliliters - 267);
 }
