@@ -8,12 +8,12 @@
 
 SoftwareSerial Dispenser(rxDispenserPin, txDispenserPin);
 SoftwareSerial Breathalyzer(rxBreathalyzerPin, txBreathalyzerPin);
-// SoftwareSerial IDReader(rxIDReaderPin, txIDReaderPin);
+SoftwareSerial IDReader(rxIDReaderPin, txIDReaderPin);
 
 void setup() {
   Serial.begin(9600);
   // IDReader.begin(9600);
-  Breathalyzer.begin(9600);
+  // Breathalyzer.begin(9600);
   // Dispenser.begin(9600);
 }
 
