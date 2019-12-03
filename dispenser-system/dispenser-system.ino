@@ -48,5 +48,6 @@ void loop() {
 
 /* Converts milliliters to pour to milliseconds the motor needs to maintain ON */
 int millilitersToMilliseconds(int milliliters) {
-  return ceil(40.7*milliliters - 267);
+  int result = 40.7*milliliters - 267;
+  return (result > 0)? ceil(result): 0;
 }

@@ -78,12 +78,13 @@ void printBAC() {
 void loadBreathalyzerPromptScreen() {
   // TODO - Undecided
   tft.setCursor(70, 0);
-  tft.println("Please breathe into the breathalyzer...");
+  tft.println("\n\nPlease breathe into the breathalyzer...");
 }
 
 void displayBACLevel(unsigned int returnedMeasurement) {
   tft.setCursor(70, 0);
   tft.println("Blood Alcohol Content (mg/ML):");
   tft.setCursor(0, 35);
+  // tft.println(returnedMeasurement/100000);
   tft.println(returnedMeasurement);
 }

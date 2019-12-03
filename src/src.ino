@@ -18,6 +18,7 @@ void setup() {
 
 // each iteration is one user
 void loop() {
+
    loadIDScanPromptScreen();
    
    // send an enable signal to the ID scanner
@@ -44,22 +45,62 @@ void loop() {
    unsigned int returnedMeasurement = (high_byte << 8) | low_byte; // PPM 0~500(but in normal air it's 20~40)
    tft.fillScreen(COLOR_BLACK);
    displayBACLevel(returnedMeasurement);
-   // while (true) {}
    
-   delay(50);
+   
    // TO DO: calculate the amount of liquid to pour (in mL), based on the BAC level (mg/mL) 
-   unsigned int amountToPour = 200;
+   unsigned int millilitersAlcohol = 50 - (returnedMeasurement / 10);
+   unsigned int millilitersWater = 300 - millilitersAlcohol;
+  
+   byte intHigh = (millilitersAlcohol >> 8) & 0xFF;
+   intHigh = (intHigh == 0)? 0xFF: intHigh;
+   byte intLow = millilitersAlcohol & 0xFF;
+   intLow = (intLow == 0)? 0x01: intLow;
+
+   byte dispenserValues[] = {0x03, 0xFF, intHigh, intLow};
+   Serial.write(dispenserValues, sizeof(dispenserValues));
+   
+   delay(3000);
+
+   intHigh = (millilitersWater >> 8) & 0xFF;
+   intHigh = (intHigh == 0)? 0xFF: intHigh;
+   intLow = millilitersWater & 0xFF;
+   intLow = (intLow == 0)? 0x01: intLow;
+
+   byte dispenserValues2[] = {0x03, 0x01, intHigh, intLow};
+   Serial.write(dispenserValues2, sizeof(dispenserValues2));
+
+   /*unsigned int amountToPour = 200;
    byte intHigh = (amountToPour >> 8) & 0xFF;
    intHigh = (intHigh == 0)? 0xFF: intHigh;
    byte intLow = amountToPour & 0xFF;
    intLow = (intLow == 0)? 0x01: intLow;
+   
    byte dispenserValues[] = {0x03, 0xFF, intHigh, intLow};
    Serial.write(dispenserValues, sizeof(dispenserValues));
    delay(3000);
+   
    byte dispenserValues2[] = {0x03, 0x01, intHigh, intLow};
    Serial.write(dispenserValues2, sizeof(dispenserValues2));
+   
+   while (true) {}*/
+
+   /*loadBreathalyzerPromptScreen();
+   byte enableBreathalyzer[] = {SYSTEM_BREATHALYZER, 0xAA};
+   Serial.write(enableBreathalyzer, sizeof(enableBreathalyzer));
+   while (Serial.available() == 0) {}
+   delay(50);
+   byte high_byte = Serial.read();
+   byte low_byte = Serial.read();
+   if (high_byte == 0xFF) {
+      high_byte = 0x00; 
+   }
+   tft.setCursor(0, 100);
+   // tft.println(high_byte);
+   // tft.println(low_byte);
+   unsigned int returnedMeasurement = (high_byte << 8) | low_byte; // PPM 0~500(but in normal air it's 20~40)
    tft.fillScreen(COLOR_BLACK);
-   // while (true) {}
+   displayBACLevel(returnedMeasurement);
+   while (true) {}*/
    
    // garbage code (above and below)
    /* byte valve   = Serial.read();
@@ -81,4 +122,6 @@ void loop() {
    
    /*byte toSend[] = {byte1, byte2};
    Serial.write(toSend, sizeof(toSend));*/
+   delay(5000);
+   tft.fillScreen(COLOR_BLACK);
 }
