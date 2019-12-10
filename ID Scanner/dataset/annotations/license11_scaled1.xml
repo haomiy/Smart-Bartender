@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>license11_scaled1.jpg</filename>
+	<path>C:\Users\xinyu\Yolo-digit-detector\raccoon_dataset\images\license11_scaled1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>license</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>969</xmin>
+			<ymin>814</ymin>
+			<xmax>2147</xmax>
+			<ymax>1705</ymax>
+		</bndbox>
+	</object>
+</annotation>
