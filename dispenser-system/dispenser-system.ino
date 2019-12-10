@@ -30,13 +30,13 @@ void loop() {
       receivedSlot = 0xFF;
       receivedVolumeHighByte = 0xFF;
       receivedVolumeLowByte  = 0xFF;
-      sendExternalNAK();
+      //sendExternalNAK();
     }
     else {
       receivedSlot = Serial.read();
       receivedVolumeHighByte = Serial.read();
       receivedVolumeLowByte  = Serial.read();
-      sendExternalACK();
+      //sendExternalACK();
       /* Everything is OK. Start pouring */
       unsigned long volume = receivedVolumeHighByte << 8 | receivedVolumeLowByte;
       digitalWrite(VALVES[receivedSlot], LOW);
@@ -48,5 +48,6 @@ void loop() {
 
 /* Converts milliliters to pour to milliseconds the motor needs to maintain ON */
 int millilitersToMilliseconds(int milliliters) {
-  return ceil(40.7*milliliters - 267);
+  int result = 40.7*milliliters - 267;
+  return (result > 0)? ceil(result): 0;
 }

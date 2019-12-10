@@ -23,23 +23,23 @@ void loadIDScanPromptScreen() {
   tft.println("  your ID card\n");
   tft.println("* Hold your ID card in");
   tft.println("  front of the camera\n");
-  tft.println("* Then, press the button");
+  /*tft.println("* Then, press the button");
   tft.println("--------------------------\n");
   tft.println("* Press the button to");
-  tft.println("  continue -->");
+  tft.println("  continue -->");*/
 }
 
 /**
  * Displays the view of the camera onto the screen
  */
-void loadIDScanWaitScreen() {
-  uint8_t* img = camera.snapshot();
-  if(img != nullptr && img != 0)
-    tft.drawImage(0, 16, camera.width(), camera.height() - 17, (uint16_t*)img);
-  tft.setTextSize(LABEL_FONT);
-  tft.setCursor(15, 0);
-  tft.println("Press button to confirm");
-}
+//void loadIDScanWaitScreen() {
+//  uint8_t* img = camera.snapshot();
+//  if(img != nullptr && img != 0)
+//    tft.drawImage(0, 16, camera.width(), camera.height() - 17, (uint16_t*)img);
+//  tft.setTextSize(LABEL_FONT);
+//  tft.setCursor(15, 0);
+//  tft.println("Press button to confirm");
+//}
 
 /**
  * Displays the information the system currently has
@@ -78,5 +78,13 @@ void printBAC() {
 void loadBreathalyzerPromptScreen() {
   // TODO - Undecided
   tft.setCursor(70, 0);
-  tft.println("Please breathe into the breathalyzer...");
+  tft.println("\n\nPlease breathe into the breathalyzer...");
+}
+
+void displayBACLevel(unsigned int returnedMeasurement) {
+  tft.setCursor(70, 0);
+  tft.println("Blood Alcohol Content (mg/ML):");
+  tft.setCursor(0, 35);
+  // tft.println(returnedMeasurement/100000);
+  tft.println(returnedMeasurement);
 }

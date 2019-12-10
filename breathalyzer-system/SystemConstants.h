@@ -4,7 +4,7 @@
  */
 
 /* UART baud rates */
-static const unsigned int BREATHALYZER_BAUD_RATE = 9600;
+static const int BREATHALYZER_BAUD_RATE = 9600;
 
 /* Pin assignments */
 static const int BREATHALYZER_ENABLE_PIN = 2;

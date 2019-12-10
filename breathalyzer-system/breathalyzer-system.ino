@@ -16,7 +16,7 @@ void setup() {
 void loop() {
   if(Serial.read() == SYSTEM_ENABLE_BYTE) {
     for(int i = 0; i < MEASUREMENT_COUNT; i++) {
-      int val = analogRead(BREATHALYZER_DATA_PIN) * MAX_BREATHALYZER_VALUE / MAX_ANALOG_VALUE;
+      int val = analogRead(BREATHALYZER_DATA_PIN) * 1.0 / MAX_ANALOG_VALUE * MAX_BREATHALYZER_VALUE;
       measurements[i] = val;
       delay(100);
     }
