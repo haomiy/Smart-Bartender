@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Glossary &mdash; MicroPython 1.9.4 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="MicroPython 1.9.4 documentation" href="../index.html"/>
+        <link rel="up" title="The MicroPython language" href="index.html"/>
+        <link rel="next" title="The MicroPython Interactive Interpreter Mode (aka REPL)" href="repl.html"/>
+        <link rel="prev" title="The MicroPython language" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MicroPython
+          
+
+          
+            
+            <img src="../_static/web-logo-sticky.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.9.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../openmvcam/quickref.html">Quick reference for the openmvcam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openmvcam/general.html">General information about the openmvcam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openmvcam/tutorial/index.html">OpenMV Cam Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">MicroPython libraries</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">The MicroPython language</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repl.html">The MicroPython Interactive Interpreter Mode (aka REPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isr_rules.html">Writing interrupt handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="speed_python.html">Maximising MicroPython Speed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constrained.html">MicroPython on Microcontrollers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packages.html">Distribution packages, package management, and deploying applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asm_thumb2_index.html">Inline Assembler for Thumb2 architectures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genrst/index.html">MicroPython differences from CPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">MicroPython license information</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">MicroPython</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">The MicroPython language</a> &raquo;</li>
+      
+    <li>Glossary</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/reference/glossary.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-baremetal">baremetal</dt>
+<dd>A system without a (full-fledged) OS, for example an
+<a class="reference internal" href="#term-mcu"><span class="xref std std-term">MCU</span></a>-based system. When running on a baremetal system,
+MicroPython effectively becomes its user-facing OS with a command
+interpreter (REPL).</dd>
+<dt id="term-board">board</dt>
+<dd>A PCB board. Oftentimes, the term is used to denote a particular
+model of an <a class="reference internal" href="#term-mcu"><span class="xref std std-term">MCU</span></a> system. Sometimes, it is used to actually
+refer to <a class="reference internal" href="#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a> to a particular board (and then
+may also refer to &#8220;boardless&#8221; ports like
+<a class="reference internal" href="#term-micropython-unix-port"><span class="xref std std-term">Unix port</span></a>).</dd>
+<dt id="term-callee-owned-tuple">callee-owned tuple</dt>
+<dd>A tuple returned by some builtin function/method, containing data
+which is valid for a limited time, usually until next call to the
+same function (or a group of related functions). After next call,
+data in the tuple may be changed. This leads to the following
+restriction on the usage of callee-owned tuples - references to
+them cannot be stored. The only valid operation is extracting
+values from them (including making a copy). Callee-owned tuples
+is a MicroPython-specific construct (not available in the general
+Python language), introduced for memory allocation optimization.
+The idea is that callee-owned tuple is allocated once and stored
+on the callee side. Subsequent calls don&#8217;t require allocation,
+allowing to return multiple values when allocation is not possible
+(e.g. in interrupt context) or not desirable (because allocation
+inherently leads to memory fragmentation). Note that callee-owned
+tuples are effectively mutable tuples, making an exception to
+Python&#8217;s rule that tuples are immutable. (It may be interesting
+why tuples were used for such a purpose then, instead of mutable
+lists - the reason for that is that lists are mutable from user
+application side too, so a user could do things to a callee-owned
+list which the callee doesn&#8217;t expect and could lead to problems;
+a tuple is protected from this.)</dd>
+<dt id="term-cpython">CPython</dt>
+<dd>CPython is the reference implementation of Python programming
+language, and the most well-known one, which most of the people
+run. It is however one of many implementations (among which
+Jython, IronPython, PyPy, and many more, including MicroPython).
+As there is no formal specification of the Python language, only
+CPython documentation, it is not always easy to draw a line
+between Python the language and CPython its particular
+implementation. This however leaves more freedom for other
+implementations. For example, MicroPython does a lot of things
+differently than CPython, while still aspiring to be a Python
+language implementation.</dd>
+<dt id="term-gpio">GPIO</dt>
+<dd>General-purpose input/output. The simplest means to control
+electrical signals. With GPIO, user can configure hardware
+signal pin to be either input or output, and set or get
+its digital signal value (logical &#8220;0&#8221; or &#8220;1&#8221;). MicroPython
+abstracts GPIO access using <a class="reference internal" href="../library/machine.Pin.html#machine.Pin" title="machine.Pin"><code class="xref py py-class docutils literal"><span class="pre">machine.Pin</span></code></a> and <a class="reference internal" href="../library/machine.Signal.html#machine.Signal" title="machine.Signal"><code class="xref py py-class docutils literal"><span class="pre">machine.Signal</span></code></a>
+classes.</dd>
+<dt id="term-gpio-port">GPIO port</dt>
+<dd>A group of <a class="reference internal" href="#term-gpio"><span class="xref std std-term">GPIO</span></a> pins, usually based on hardware
+properties of these pins (e.g. controllable by the same
+register).</dd>
+<dt id="term-interned-string">interned string</dt>
+<dd>A string referenced by its (unique) identity rather than its
+address. Interned strings are thus can be quickly compared just
+by their identifiers, instead of comparing by content. The
+drawbacks of interned strings are that interning operation takes
+time (proportional to the number of existing interned strings,
+i.e. becoming slower and slower over time) and that the space
+used for interned strings is not reclaimable. String interning
+is done automatically by MicroPython compiler and runtimer when
+it&#8217;s either required by the implementation (e.g. function keyword
+arguments are represented by interned string id&#8217;s) or deemed
+beneficial (e.g. for short enough strings, which have a chance
+to be repeated, and thus interning them would save memory on
+copies). Most of string and I/O operations don&#8217;t produce interned
+strings due to drawbacks described above.</dd>
+<dt id="term-mcu">MCU</dt>
+<dd>Microcontroller. Microcontrollers usually have much less resources
+than a full-fledged computing system, but smaller, cheaper and
+require much less power. MicroPython is designed to be small and
+optimized enough to run on an average modern microcontroller.</dd>
+<dt id="term-micropython-lib">micropython-lib</dt>
+<dd><p class="first">MicroPython is (usually) distributed as a single executable/binary
+file with just few builtin modules. There is no extensive standard
+library comparable with <a class="reference internal" href="#term-cpython"><span class="xref std std-term">CPython</span></a>. Instead, there is a related, but
+separate project
+<a class="reference external" href="https://github.com/micropython/micropython-lib">micropython-lib</a>
+which provides implementations for many modules from CPython&#8217;s
+standard library. However, large subset of these modules require
+POSIX-like environment (Linux, FreeBSD, MacOS, etc.; Windows may be
+partially supported), and thus would work or make sense only with
+<a class="reference internal" href="#term-micropython-unix-port"><code class="xref any std std-term docutils literal"><span class="pre">MicroPython</span> <span class="pre">Unix</span> <span class="pre">port</span></code></a>. Some subset of modules is however usable
+for <a class="reference internal" href="#term-baremetal"><code class="xref any std std-term docutils literal"><span class="pre">baremetal</span></code></a> ports too.</p>
+<p class="last">Unlike monolithic <a class="reference internal" href="#term-cpython"><span class="xref std std-term">CPython</span></a> stdlib, micropython-lib modules
+are intended to be installed individually - either using manual
+copying or using <a class="reference internal" href="#term-upip"><span class="xref std std-term">upip</span></a>.</p>
+</dd>
+<dt id="term-micropython-port">MicroPython port</dt>
+<dd>MicroPython supports different <a class="reference internal" href="#term-board"><span class="xref std std-term">boards</span></a>, RTOSes,
+and OSes, and can be relatively easily adapted to new systems.
+MicroPython with support for a particular system is called a
+&#8220;port&#8221; to that system. Different ports may have widely different
+functionality. This documentation is intended to be a reference
+of the generic APIs available across different ports (&#8220;MicroPython
+core&#8221;). Note that some ports may still omit some APIs described
+here (e.g. due to resource constraints). Any such differences,
+and port-specific extensions beyond MicroPython core functionality,
+would be described in the separate port-specific documentation.</dd>
+<dt id="term-micropython-unix-port">MicroPython Unix port</dt>
+<dd>Unix port is one of the major <a class="reference internal" href="#term-micropython-port"><span class="xref std std-term">MicroPython ports</span></a>.
+It is intended to run on POSIX-compatible operating systems, like
+Linux, MacOS, FreeBSD, Solaris, etc. It also serves as the basis
+of Windows port. The importance of Unix port lies in the fact
+that while there are many different <a class="reference internal" href="#term-board"><span class="xref std std-term">boards</span></a>, so
+two random users unlikely have the same board, almost all modern
+OSes have some level of POSIX compatibility, so Unix port serves
+as a kind of &#8220;common ground&#8221; to which any user can have access.
+So, Unix port is used for initial prototyping, different kinds
+of testing, development of machine-independent features, etc.
+All users of MicroPython, even those which are interested only
+in running MicroPython on <a class="reference internal" href="#term-mcu"><span class="xref std std-term">MCU</span></a> systems, are recommended
+to be familiar with Unix (or Windows) port, as it is important
+productivity helper and a part of normal MicroPython workflow.</dd>
+<dt id="term-port">port</dt>
+<dd>Either <a class="reference internal" href="#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a> or <a class="reference internal" href="#term-gpio-port"><span class="xref std std-term">GPIO port</span></a>. If not clear
+from context, it&#8217;s recommended to use full specification like one
+of the above.</dd>
+<dt id="term-stream">stream</dt>
+<dd>Also known as a &#8220;file-like object&#8221;. An object which provides sequential
+read-write access to the underlying data. A stream object implements
+a corresponding interface, which consists of methods like <code class="docutils literal"><span class="pre">read()</span></code>,
+<code class="docutils literal"><span class="pre">write()</span></code>, <code class="docutils literal"><span class="pre">readinto()</span></code>, <code class="docutils literal"><span class="pre">seek()</span></code>, <code class="docutils literal"><span class="pre">flush()</span></code>, <code class="docutils literal"><span class="pre">close()</span></code>, etc.
+A stream is an important concept in MicroPython, many I/O objects
+implement the stream interface, and thus can be used consistently and
+interchangeably in different contexts. For more information on
+streams in MicroPython, see <a class="reference internal" href="../library/uio.html#module-uio" title="uio: input/output streams"><code class="xref any py py-mod docutils literal"><span class="pre">uio</span></code></a> module.</dd>
+<dt id="term-upip">upip</dt>
+<dd>(Literally, &#8220;micro pip&#8221;). A package manage for MicroPython, inspired
+by <a class="reference internal" href="#term-cpython"><span class="xref std std-term">CPython</span></a>&#8216;s pip, but much smaller and with reduced functionality.
+upip runs both on <a class="reference internal" href="#term-micropython-unix-port"><span class="xref std std-term">Unix port</span></a> and on
+<a class="reference internal" href="#term-baremetal"><span class="xref std std-term">baremetal</span></a> ports (those which offer filesystem and networking
+support).</dd>
+</dl>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="repl.html" class="btn btn-neutral float-right" title="The MicroPython Interactive Interpreter Mode (aka REPL)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="The MicroPython language" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2019, Damien P. George, Paul Sokolovsky, OpenMV LLC, and contributors.
+      Last updated on 31 Mar 2019.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Ports and Versions</span>
+    openmvcam (latest)
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <!--p>
+    <dl>
+      <dt>Ports</dt>
+      
+        <dd><a href="//en/latest/unix">unix</a></dd>
+      
+        <dd><a href="//en/latest/pyboard">pyboard</a></dd>
+      
+        <dd><a href="//en/latest/wipy">wipy</a></dd>
+      
+        <dd><a href="//en/latest/esp8266">esp8266</a></dd>
+      
+        <dd><a href="//en/latest/openmvcam">openmvcam</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest/openmvcam">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+        <dd><a href="//en/latest/micropython-openmvcam.pdf">PDF</a></dd>
+      
+    </dl>
+    </p-->
+    <dl>
+        <dt>Language</dt>
+        
+          <dd><a href="http://docs.openmv.io">English</a></dd>
+        
+          <dd><a href="http://doc.singtown.cc/openmv_zh">中文</a></dd>
+        
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://openmv.io">openmv.io</a>
+        </dd>
+        <dd>
+          <a href="http://forums.openmv.io">forums.openmv.io</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/openmv/openmv">github.com/openmv/openmv</a>
+        </dd>
+        <dd>
+          <a href="http://micropython.org">micropython.org</a>
+        </dd>
+        <dd>
+          <a href="http://forum.micropython.org">forum.micropython.org</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/micropython/micropython">github.com/micropython/micropython</a>
+        </dd>
+    </dl>
+  </div>
+</div>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.9.4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
